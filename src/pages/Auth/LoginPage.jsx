@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AuthImage from '../../assets/auth/auth.png';
+import AuthImage from '../../assets/illustration.png';
 import Logo from '../../assets/logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import config from '../../config';
@@ -34,13 +34,12 @@ const LoginPage = () => {
     };
     return (
         <div className='flex justify-center items-center w-screen h-screen'>
-            <div className='flex-1 hidden md:flex flex-col h-[100%] bg-[#F3FDFF]'>
+            <div className='flex-1 hidden md:flex flex-col h-[100%] bg-[#010080]'>
                 <div className="flex-shrink-0 flex items-center gap-x-2 p-5">
                     <img src={Logo} alt="" className='h-10' />
-                    <span className="text-xl">QOSYNE</span>
                 </div>
                 <div className='flex-1 h-[90%]'>
-                    <img src={AuthImage} alt="" className='h-[100%]' />
+                    <img src={AuthImage} alt="" className=' h-fit' />
                 </div>
             </div>
 
@@ -52,8 +51,8 @@ const LoginPage = () => {
                         <input required={true} type="email" name="email" placeholder="Email Address" className="w-[100%] mt-2 border p-2 rounded outline-none block" onChange={handleChange} />
                         <input required={true} type="password" name="password" placeholder="Password" className="w-[100%] mt-2 border p-2 rounded outline-none block" onChange={handleChange} />
                     </form>
-                    <button className="w-full bg-[#9FE7F5] p-2 rounded mt-4" onClick={handleLogin}>Sign In</button>
-                    <p className="text-center mt-2 text-[#3D8977]">Don't have an account? <Link to="/register" className="text-blue-500">Sign Up</Link></p>
+                    <button className="w-full bg-[#010080] p-2 rounded mt-4 text-white" onClick={handleLogin}>Sign In</button>
+                    <p className="text-center mt-2 text-[#3D8977]">Don't have an account? <Link to="/register" className="text-[#010080]">Sign Up</Link></p>
                 </div>
             </div>
         </div>

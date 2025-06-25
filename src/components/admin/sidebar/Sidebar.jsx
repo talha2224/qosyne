@@ -31,17 +31,16 @@ const Sidebar = () => {
   return (
     <>
       {/* Desktop Sidebar */}
-      <div className={`lg:block hidden w-[15rem] h-[100vh] bg-[#000] relative border-r border-r-[#D8D8D880]`}>
+      <div className={`lg:block hidden w-[15rem] h-[100vh] bg-[#010080] relative border-r border-r-[#D8D8D880]`}>
 
         <div className="flex-shrink-0 flex items-center gap-x-2 p-5">
           <img src={Logo} alt="" className='h-10' />
-          <span className="text-xl text-white">QOSYNE</span>
         </div>
 
 
         <div className='mt-8'>
           {adminNav?.map((i) => (
-            <Link to={`/admin/dashboard/${i.link}`} key={i.id} className={`flex ${location == i.link && "bg-[#282727]"} px-5 p-2  items-center gap-x-3 mb-2 cursor-pointer`}>
+            <Link to={`/admin/dashboard/${i.link}`} key={i.id} className={`flex ${location == i.link && "bg-[#8181f5]"} px-5 p-2  items-center gap-x-3 mb-2 cursor-pointer`}>
               <div>{i.icon}</div>
               <p className={`text-sm ${location == i.link ? "text-[#fff]" : "text-[#8F8F8F]"}`}>{i.name}</p>
             </Link>
@@ -58,17 +57,16 @@ const Sidebar = () => {
       {/* Mobile Sidebar */}
       {
         isNavOpen && (
-          <div className={`lg:hidden block w-[14rem] z-50 h-[100vh] bg-[#0F0F0F] fixed top-0 left-0 transition-all duration-300 ease-in-out ${isNavOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`} ref={sidebarRef}>
+          <div className={`lg:hidden block w-[14rem] z-50 h-[100vh] bg-[#010080] fixed top-0 left-0 transition-all duration-300 ease-in-out ${isNavOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`} ref={sidebarRef}>
 
             <div className="flex-shrink-0 flex items-center gap-x-2 p-5">
               <img src={Logo} alt="" className='h-10' />
-              <span className="text-xl text-white">QOSYNE</span>
             </div>
 
 
             <div className='mt-8'>
               {adminNav?.map((i) => (
-                <Link to={`/admin/dashboard/${i.link}`} key={i.id} className={`flex ${location == i.link && "bg-[#282727]"} px-5 p-2  items-center gap-x-3 mb-2 cursor-pointer`}>
+                <Link to={`/admin/dashboard/${i.link}`} key={i.id} className={`flex ${location == i.link && "bg-[#8181f5]"} px-5 p-2  items-center gap-x-3 mb-2 cursor-pointer`}>
                   <div>{i.icon}</div>
                   <p className={`text-sm ${location == i.link ? "text-[#fff]" : "text-[#8F8F8F]"}`}>{i.name}</p>
                 </Link>
