@@ -73,7 +73,7 @@ const AdminTransactionPage = () => {
 
     return (
         <div>
-            <div className="flex justify-between items-center mb-4 bg-white p-2rounded-md">
+            <div className="flex justify-between items-center mb-4 bg-white p-2 rounded-md">
                 <h2 className="text-lg">Admin Transactions</h2>
                 <button onClick={() => setTaxModel(true)} className="bg-gray-200 px-4 py-2 rounded-md text-sm">Tax Model</button>
             </div>
