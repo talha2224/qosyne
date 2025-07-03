@@ -8,6 +8,7 @@ import LoginPage from './pages/Auth/LoginPage';
 import AdminHomePage from './pages/Admin/Dashboard/AdminHomePage';
 import AdminTransactionage from './pages/Admin/Dashboard/AdminTransactionage';
 import AdminUserPage from './pages/Admin/Dashboard/AdminUserPage';
+import AdminSupportPage from './pages/Admin/Dashboard/AdminSupportPage';
 const AdminLayout = lazy(() => import('./components/admin/Layout'));
 
 
@@ -42,6 +43,7 @@ function App() {
               <Route path="home" element={<AdminHomePage />} />
               <Route path="user" element={<AdminUserPage />} />
               <Route path="transaction" element={<AdminTransactionage />} />
+              <Route path="support" element={<AdminSupportPage />} />
             </Route>
 
 

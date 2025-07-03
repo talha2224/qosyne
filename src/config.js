@@ -1,6 +1,9 @@
 
+// const config = {
+//     baseUrl:"http://localhost:5000/api",
+// }
 const config = {
-    baseUrl:"https://ngoc-backend.vercel.app/api/v1",
+    baseUrl:"https://qosyne.com/api",
 }
 
 export default config
