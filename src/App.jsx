@@ -9,6 +9,9 @@ import AdminHomePage from './pages/Admin/Dashboard/AdminHomePage';
 import AdminTransactionage from './pages/Admin/Dashboard/AdminTransactionage';
 import AdminUserPage from './pages/Admin/Dashboard/AdminUserPage';
 import AdminSupportPage from './pages/Admin/Dashboard/AdminSupportPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
+import LandingPage from './pages/LandingPage';
 const AdminLayout = lazy(() => import('./components/admin/Layout'));
 
 
@@ -47,7 +50,10 @@ function App() {
             </Route>
 
 
-            <Route path='/' element={<LoginPage />} />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/' element={<LandingPage />} />
+            <Route path='/privacy' element={<PrivacyPage />} />
+            <Route path='/terms' element={<TermsPage />} />
 
           </Routes>
         </SuspenseWithDelay>

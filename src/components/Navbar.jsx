@@ -1,32 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/logo.svg'
+import Logo from '../assets/logo.svg';
+import { HiMenu, HiX } from 'react-icons/hi';
+
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="">
-            <div className="px-4 sm:px-6 lg:px-8">
+        <nav className="px-4 sm:px-6 lg:px-8 pt-4 text-[#fff]">
+            <div className="flex items-center justify-between">
+                {/* Logo */}
+                <Link to="/">
+                    <img src={Logo} alt="Qosyne Logo" className="h-10" />
+                </Link>
 
-                <div className="flex items-center justify-between h-16">
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center space-x-4">
+                    <Link to="/privacy" className="hover: transition">Privacy & Policy</Link>
+                    <Link to="/terms" className="hover: transition">Terms & Condition</Link>
+                </div>
 
-
-                    <div className="flex-shrink-0 flex items-center gap-x-2">
-                        <img src={Logo} alt="" className='h-10'/>
-                        <span className="text-xl">QOSYNE</span>
-                    </div>
-
-                    <div className="block">
-                        <div className="ml-4 flex items-center md:ml-6">
-                            <Link to="/login" className="text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">Login</Link>
-                            <Link to="/register"><button className="bg-[#9FE7F5] px-4 py-2 rounded-md text-sm font-medium ml-4">Signup</button></Link>
-                        </div>
-                    </div>
-
+                {/* Mobile Menu Button */}
+                <div className="md:hidden">
+                    <button onClick={toggleMenu} className="text-2xl  focus:outline-none">{menuOpen ? <HiX /> : <HiMenu />}</button>
                 </div>
             </div>
 
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div className="md:hidden mt-2 py-2 px-4 bg-blue-800">
+                    <Link to="/privacy"className="block"onClick={() => setMenuOpen(false)}>Privacy & Policy</Link>
+                    <Link to="/terms"className="block"onClick={() => setMenuOpen(false)}>Terms & Condition</Link>
+                </div>
+            )}
         </nav>
     );
-}
+};
 
 export default Navbar;
