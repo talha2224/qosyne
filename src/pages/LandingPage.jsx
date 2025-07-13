@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { FaMobileAlt, FaShieldAlt, FaExchangeAlt, FaMoneyCheckAlt } from 'react-icons/fa';
 import Img from '../assets/landing/mobile.png'
+import transaction from '../assets/landing/transaction.png'
 const LandingPage = () => {
     return (
         <div className="w-full text-white bg-[#010080] ">
@@ -17,19 +18,28 @@ const LandingPage = () => {
                     <div>
                         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to Qosyne</h1>
                         <p className="text-lg sm:text-xl max-w-2xl">The easiest way to send, receive, and manage money across platforms—securely and instantly.</p>
-                        <div className="mt-6">
-                            <Link to="/" className="bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition">Download App</Link>
+                        <div className="mt-6 flex items-center gap-x-3 flex-wrap">
+                            <Link to="/" className="bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on App Store</Link>
+                            <Link to="/" className="bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on Play Store</Link>
                         </div>
                     </div>
+
+                    <img src={Img} alt="" className='w-[14rem]' />
                 </section>
 
                 {/* About Us Section */}
-                <section className="py-16 text-center">
-                    <h2 className="text-3xl font-bold mb-4">About Qosyne</h2>
-                    <p className=" max-w-3xl mx-auto text-lg">
-                        Qosyne is a peer-to-peer (P2P) and Business to Consumer (B2C) payment app that enables users to send and receive money directly using a mobile device—even across different platforms. Whether you're splitting a bill, raising funds, or running a business—Qosyne makes it easy.
-                    </p>
-                </section>
+
+                <div className='py-16 flex justify-between items-start flex-wrap'>
+
+                    <section className="">
+                        <h2 className="text-3xl font-bold mb-4">About Qosyne</h2>
+                        <p className=" max-w-3xl text-lg">Qosyne is a peer-to-peer (P2P) and Business to Consumer (B2C) payment app that enables users to send and receive money directly using a mobile device—even across different platforms. Whether you're splitting a bill, raising funds, or running a business—Qosyne makes it easy.</p>
+                    </section>
+
+                    <img src={transaction} alt="" className='w-[14rem]' />
+
+
+                </div>
 
                 {/* Features Section */}
                 <section className="py-16  text-center">
@@ -74,7 +84,7 @@ const LandingPage = () => {
                             <label htmlFor="message" className="outline-none mb-2">Message</label>
                             <textarea id="message" rows="4" className=" rounded-lg p-3" placeholder="How can we help?" />
                         </div>
-                        <button onClick={(e)=>e.preventDefault()} type="submit" className="w-full text-white py-3 rounded-lg bg-blue-900 transition">Send Message</button>
+                        <button onClick={(e) => e.preventDefault()} type="submit" className="w-full text-white py-3 rounded-lg bg-blue-900 transition">Send Message</button>
                     </form>
                 </section>
 
