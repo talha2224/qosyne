@@ -1,100 +1,144 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { FaMobileAlt, FaShieldAlt, FaExchangeAlt, FaMoneyCheckAlt } from 'react-icons/fa';
-import Img from '../assets/landing/mobile.png'
-import transaction from '../assets/landing/transaction.png'
+import Img from '../assets/landing/mobile.png';
+import transaction from '../assets/landing/transaction.png';
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i = 1) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: i * 0.2,
+            duration: 0.6,
+            ease: 'easeOut'
+        }
+    })
+};
+
 const LandingPage = () => {
     return (
-        <div className="w-full text-white bg-[#010080] ">
-
+        <div className="w-full text-white bg-[#010080]">
             <Navbar />
 
-
             <div className='px-4 sm:px-6 lg:px-8 py-10'>
-                {/* Hero Section */}
-                <section className=" text-white pb-20 py-10 flex justify-between items-start flex-wrap">
 
-                    <div>
+                {/* Hero Section */}
+                <motion.section
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="text-white pb-20 py-10 flex justify-between items-start flex-wrap"
+                >
+                    <motion.div variants={fadeInUp}>
                         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to Qosyne</h1>
                         <p className="text-lg sm:text-xl max-w-2xl">The easiest way to send, receive, and manage money across platforms—securely and instantly.</p>
                         <div className="mt-6 flex items-center gap-x-3 flex-wrap">
                             <Link to="/" className="bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on App Store</Link>
                             <Link to="/" className="bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on Play Store</Link>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <img src={Img} alt="" className='w-[14rem]' />
-                </section>
+                    <motion.img src={Img} alt="" className='w-[14rem]' variants={fadeInUp} custom={1.5} />
+                </motion.section>
 
                 {/* About Us Section */}
-
-                <div className='py-16 flex justify-between items-start flex-wrap'>
-
-                    <section className="">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className='py-16 flex justify-between items-start flex-wrap'
+                >
+                    <motion.section variants={fadeInUp}>
                         <h2 className="text-3xl font-bold mb-4">About Qosyne</h2>
-                        <p className=" max-w-3xl text-lg">Qosyne is a peer-to-peer (P2P) and Business to Consumer (B2C) payment app that enables users to send and receive money directly using a mobile device—even across different platforms. Whether you're splitting a bill, raising funds, or running a business—Qosyne makes it easy.</p>
-                    </section>
+                        <p className="max-w-3xl text-lg">Qosyne is a peer-to-peer (P2P) and Business to Consumer (B2C) payment app that enables users to send and receive money directly using a mobile device—even across different platforms.</p>
+                    </motion.section>
 
-                    <img src={transaction} alt="" className='w-[14rem]' />
-
-
-                </div>
+                    <motion.img src={transaction} alt="" className='w-[14rem]' variants={fadeInUp} custom={1.5} />
+                </motion.div>
 
                 {/* Features Section */}
-                <section className="py-16  text-center">
-                    <h2 className="text-3xl font-bold mb-12">Why Qosyne?</h2>
+                <motion.section
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="py-16 text-center"
+                >
+                    <motion.h2 className="text-3xl font-bold mb-12" variants={fadeInUp}>Why Qosyne?</motion.h2>
+
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
-                        <div className="bg-blue-800 p-6 shadow-lg rounded-xl">
-                            <FaExchangeAlt className=" text-4xl mb-4 mx-auto" />
-                            <h3 className="text-xl  mb-2">Cross-Platform Transfers</h3>
-                            <p className="">Send and receive money across multiple trusted platforms in real-time.</p>
-                        </div>
-                        <div className="bg-blue-800 p-6 shadow-lg rounded-xl">
-                            <FaMoneyCheckAlt className=" text-4xl mb-4 mx-auto" />
-                            <h3 className="text-xl  mb-2">Minimal Fees</h3>
-                            <p className="">Enjoy ultra-low transfer fees with every transaction.</p>
-                        </div>
-                        <div className="bg-blue-800 p-6 shadow-lg rounded-xl">
-                            <FaShieldAlt className=" text-4xl mb-4 mx-auto" />
-                            <h3 className="text-xl  mb-2">Bank-Grade Security</h3>
-                            <p className="">We protect your data and money with strong encryption and secure protocols.</p>
-                        </div>
-                        <div className="bg-blue-800 p-6 shadow-lg rounded-xl">
-                            <FaMobileAlt className=" text-4xl mb-4 mx-auto" />
-                            <h3 className="text-xl  mb-2">Smart Notifications</h3>
-                            <p className="">Track payments with real-time updates and an easy-to-read transaction history.</p>
-                        </div>
+                        {[{
+                            icon: <FaExchangeAlt />,
+                            title: "Cross-Platform Transfers",
+                            desc: "Send and receive money across multiple trusted platforms in real-time."
+                        }, {
+                            icon: <FaMoneyCheckAlt />,
+                            title: "Minimal Fees",
+                            desc: "Enjoy ultra-low transfer fees with every transaction."
+                        }, {
+                            icon: <FaShieldAlt />,
+                            title: "Bank-Grade Security",
+                            desc: "We protect your data and money with strong encryption and secure protocols."
+                        }, {
+                            icon: <FaMobileAlt />,
+                            title: "Smart Notifications",
+                            desc: "Track payments with real-time updates and an easy-to-read transaction history."
+                        }].map((item, index) => (
+                            <motion.div
+                                key={index}
+                                variants={fadeInUp}
+                                custom={index * 0.3}
+                                className="bg-blue-800 p-6 shadow-lg rounded-xl"
+                            >
+                                <div className="text-4xl mb-4 mx-auto">{item.icon}</div>
+                                <h3 className="text-xl mb-2">{item.title}</h3>
+                                <p>{item.desc}</p>
+                            </motion.div>
+                        ))}
                     </div>
-                </section>
+                </motion.section>
 
                 {/* Contact Section */}
-                <section className="py-16 ">
-                    <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
-                    <form className="max-w-3xl mx-auto bg-blue-800 p-8 rounded-xl shadow-md space-y-6">
+                <motion.section
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="py-16"
+                >
+                    <motion.h2 className="text-3xl font-bold text-center mb-8" variants={fadeInUp}>Contact Us</motion.h2>
+                    <motion.form
+                        variants={fadeInUp}
+                        className="max-w-3xl mx-auto bg-blue-800 p-8 rounded-xl shadow-md space-y-6"
+                    >
                         <div className="flex flex-col">
-                            <label htmlFor="name" className=" mb-2">Name</label>
+                            <label htmlFor="name" className="mb-2">Name</label>
                             <input type="text" id="name" className="outline-none rounded-lg p-3" placeholder="Your Name" />
                         </div>
                         <div className="flex flex-col">
-                            <label htmlFor="email" className=" mb-2">Email</label>
+                            <label htmlFor="email" className="mb-2">Email</label>
                             <input type="email" id="email" className="outline-none rounded-lg p-3" placeholder="you@example.com" />
                         </div>
                         <div className="flex flex-col">
-                            <label htmlFor="message" className="outline-none mb-2">Message</label>
-                            <textarea id="message" rows="4" className=" rounded-lg p-3" placeholder="How can we help?" />
+                            <label htmlFor="message" className="mb-2">Message</label>
+                            <textarea id="message" rows="4" className="rounded-lg p-3" placeholder="How can we help?" />
                         </div>
                         <button onClick={(e) => e.preventDefault()} type="submit" className="w-full text-white py-3 rounded-lg bg-blue-900 transition">Send Message</button>
-                    </form>
-                </section>
+                    </motion.form>
+                </motion.section>
 
                 {/* Footer */}
-                <footer className="text-center text-sm mt-10">
+                <motion.footer
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center text-sm mt-10"
+                >
                     © {new Date().getFullYear()} Qosyne. All rights reserved.
-                </footer>
-
+                </motion.footer>
             </div>
-
         </div>
     );
 };
