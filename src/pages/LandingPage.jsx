@@ -36,9 +36,9 @@ const LandingPage = () => {
                     <motion.div variants={fadeInUp}>
                         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to Qosyne</h1>
                         <p className="text-lg sm:text-xl max-w-2xl">The easiest way to send, receive, and manage money across platforms—securely and instantly.</p>
-                        <div className="mt-6 flex items-center gap-x-3 flex-wrap">
-                            <Link to="/" className="bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on App Store</Link>
-                            <Link to="/" className="bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on Play Store</Link>
+                        <div className="mt-4 flex items-center gap-x-3 flex-wrap">
+                            <Link to="/" className="mt-2 bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on App Store</Link>
+                            <Link to="/" className="mt-2 bg-white text-black py-2 px-6 rounded-full hover:bg-gray-200 transition text-sm">Get it on Play Store</Link>
                         </div>
                     </motion.div>
 
