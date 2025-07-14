@@ -52,7 +52,6 @@ const LoginPage = () => {
                         <input required={true} type="password" name="password" placeholder="Password" className="w-[100%] mt-2 border p-2 rounded outline-none block" onChange={handleChange} />
                     </form>
                     <button className="w-full bg-[#010080] p-2 rounded mt-4 text-white" onClick={handleLogin}>Sign In</button>
-                    <p className="text-center mt-2 text-[#3D8977]">Don't have an account? <Link to="/register" className="text-[#010080]">Sign Up</Link></p>
                 </div>
             </div>
         </div>
