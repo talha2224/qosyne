@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoLogOut } from 'react-icons/io5';
 import { useSidebar } from '../../../context/SidebarContext';
 import { RxCross2 } from 'react-icons/rx';
-import Logo from '../../../assets/logo.png'
+import Logo from '../../../assets/dashboard/logo.png'
 
 const Sidebar = () => {
 
@@ -33,8 +33,8 @@ const Sidebar = () => {
       {/* Desktop Sidebar */}
       <div className={`lg:block hidden w-[15rem] h-[100vh] bg-[#010080] relative border-r border-r-[#D8D8D880]`}>
 
-        <div className="flex-shrink-0 flex items-center gap-x-2 p-5">
-          <img src={Logo} alt="" className='h-10' />
+        <div className="flex items-center justify-center p-5 -ml-3">
+          <img src={Logo} alt="" className='h-20' />
         </div>
 
 
@@ -59,9 +59,10 @@ const Sidebar = () => {
         isNavOpen && (
           <div className={`lg:hidden block w-[14rem] z-50 h-[100vh] bg-[#010080] fixed top-0 left-0 transition-all duration-300 ease-in-out ${isNavOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`} ref={sidebarRef}>
 
-            <div className="flex-shrink-0 flex items-center gap-x-2 p-5">
-              <img src={Logo} alt="" className='h-10' />
+            <div className="flex items-center justify-center p-5 -ml-3">
+              <img src={Logo} alt="" className='h-20' />
             </div>
+
 
 
             <div className='mt-8'>
