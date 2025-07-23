@@ -45,12 +45,12 @@ const Sidebar = () => {
               <p className={`text-sm ${location == i.link ? "text-[#fff]" : "text-[#8F8F8F]"}`}>{i.name}</p>
             </Link>
           ))}
+          <div onClick={() => nav("/login")} className='p-2 mx-3 flex items-center gap-x-3 '>
+            <IoLogOut className='text-[#FF3B30] cursor-pointer' />
+            <p className='text-[#8F8F8F] text-sm'>Log out</p>
+          </div>
         </div>
 
-        <div onClick={() => nav("/")} className='absolute bottom-5 w-[80%] flex items-center gap-x-3 cursor-pointer mx-5 '>
-          <IoLogOut className='text-[#FF3B30] cursor-pointer text-xl' />
-          <p className='text-[#C9C9C9]'>Log out</p>
-        </div>
 
       </div>
 
@@ -72,12 +72,12 @@ const Sidebar = () => {
                   <p className={`text-sm ${location == i.link ? "text-[#fff]" : "text-[#8F8F8F]"}`}>{i.name}</p>
                 </Link>
               ))}
+              <div onClick={() => nav("/login")} className='p-2 mx-3 flex items-center gap-x-3 '>
+                <IoLogOut className='text-[#FF3B30] cursor-pointer' />
+                <p className='text-[#8F8F8F] text-sm'>Log out</p>
+              </div>
             </div>
 
-            <div onClick={() => nav("/")} className='absolute bottom-5 w-[80%] flex items-center gap-x-3 cursor-pointer mx-5 '>
-              <IoLogOut className='text-[#FF3B30] cursor-pointer text-xl' />
-              <p className='text-[#C9C9C9]'>Log out</p>
-            </div>
 
           </div>
         )}
