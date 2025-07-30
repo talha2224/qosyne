@@ -55,14 +55,8 @@ const PrivacyPage = () => {
 
                 <section className="mb-8">
                     <h2 className="text-xl sm:text-2xl font-bold mb-4">5. Photos and Media Access</h2>
-                    <p className="text-base sm:text-lg leading-relaxed">When you choose to upload a profile picture, Qosyne may request access to your device’s photo library. This access is used solely to allow you to select and upload a photo for your profile. We do not scan, collect, or store any other images or media on your device.</p>
-                    <p className="text-base sm:text-lg leading-relaxed mt-2">Access to photos is:</p>
-                    <ul className="list-disc list-inside text-base sm:text-lg leading-relaxed ml-4 space-y-1">
-                        <li>User-initiated and only occurs when you choose to upload a picture.</li>
-                        <li>Used exclusively for displaying your profile image within the app.</li>
-                        <li>Not shared with third parties, except as required to store and display the image (e.g., secure cloud storage).</li>
-                    </ul>
-                    <p className="text-base sm:text-lg leading-relaxed mt-2">You can deny this permission at any time through your device settings. Denying this permission will not affect your ability to use other features of the app.</p>
+                    <p className="text-base sm:text-lg leading-relaxed">When you choose to upload a profile picture, Qosyne uses the system photo picker to let you select a single image from your device.This access is limited, user-initiated, and does not require permission to access your full media library.</p>
+                    <p className="text-base sm:text-lg leading-relaxed mt-2">We do not scan, collect, or access any other photos or media files stored on your device.Your selected image is used only for your profile and stored securely.Qosyne does not share your photo with third parties except as necessary to display your profile picture within the app.</p>
                 </section>
 
                 <section className="mb-8">
