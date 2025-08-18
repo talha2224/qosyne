@@ -12,6 +12,7 @@ import AdminSupportPage from './pages/Admin/Dashboard/AdminSupportPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import LandingPage from './pages/LandingPage';
+import AdminProfilePage from './pages/Admin/Dashboard/AdminProfilePage';
 const AdminLayout = lazy(() => import('./components/admin/Layout'));
 
 
@@ -47,6 +48,7 @@ function App() {
               <Route path="user" element={<AdminUserPage />} />
               <Route path="transaction" element={<AdminTransactionage />} />
               <Route path="support" element={<AdminSupportPage />} />
+              <Route path="profile" element={<AdminProfilePage />} />
             </Route>
 
 
